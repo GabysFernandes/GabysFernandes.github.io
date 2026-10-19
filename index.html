@@ -17,14 +17,20 @@
 
     <style type="text/tailwindcss">
 
-    header {
-    @apply pt-8 px-[9%] pb-[42px] md:py-[3%] md:px-[20%];
-    }
+    header { 
+        @apply min-h-[60vh] md:min-h-[80vh]
+            bg-linear-to-b from-purple-600 to-purple-900 
+            flex flex-col justify-center
+            px-8 lg:px-60 py-12
+            text-center;
+        }
 
     header h1 {
-    @apply tracking-tighter text-5xl md:text-8xl mb-8;
+        @apply text-7xl md:text-8xl
+            text-white font-bold
+            tracking-tight
+            mb-6;
     }
-
     header h2 {
     @apply text-3xl md:text-5xl italic;
     }
