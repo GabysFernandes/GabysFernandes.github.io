@@ -12,21 +12,20 @@ Add only the requested feature. Avoid unrelated redesigns or refactoring.
 
 NEW FEATURE:
 
-Add a shared Tailwind colour palette for independently selecting the hero background, H1 colour and H2 colour.
+Add separate H1 and H2 text-effect groups.
 
-Provide Background, H1 and H2 target buttons, with Background selected initially. Clearly show the active target and its selected colour name.
+For each heading, add a “Serif font” checkbox. Unchecked uses Tailwind font-sans; checked uses font-serif. Both are unchecked by default. Apply these through named classes with @apply in the shared hero stylesheet.
 
-Display the Tailwind colour families in labelled rows and shades 50–950 in labelled columns. Include black and white separately. Give swatches accessible colour names, keyboard support, visible focus and a clear selected state. Allow the palette itself to scroll horizontally on narrow screens without widening the page.
+For each heading, add a native range slider labelled “Letter spacing”. Use a minimum of -0.05em, a maximum of 0.10em and a step of 0.005em. Default H1 to -0.05em and H2 to -0.025em.
 
-Clicking a swatch changes only the active target.
+Display the current value with its em unit beside each slider. Update the preview immediately while dragging. Store numeric slider values in the settings object.
 
-Rename the existing checkbox “Dark appearance preset”. Changing it resets all three colours: light uses slate-50, slate-900 and slate-700; dark uses slate-900, slate-50 and slate-300 for background, H1 and H2 respectively. Subsequent palette choices override individual colours. Other controls must not reset custom colours.
+Apply letter spacing through heading-specific CSS rules in a dedicated style element in the head. Include those rules in exported HTML; do not use inline styles.
 
-Disable the H2 target while H2 is hidden. If H2 was selected, select Background instead. Preserve its colour when restoring it.
+Disable H2 effect controls when the subheading is hidden. Preserve their settings and the edited heading text when it is restored.
 
-Store colour names in the settings object. Apply colours using Tailwind palette variables in a shared style element in the head, with rules that override the preset styles. Include these rules in exported HTML. Do not use inline styles.
 
-Use solid colours only. Do not add gradients or custom colour inputs.
+Return the complete updated HTML in one code block.
 
 
 CURRENT CODE:
